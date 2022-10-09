@@ -3,7 +3,7 @@ const path = require("path");
 const p = path.join(
   path.dirname(require.main.filename),
   "data",
-  "prodcuts.json"
+  "products.json"
 );
 
 const getProductsFromFile = (callback) => {
@@ -17,11 +17,11 @@ const getProductsFromFile = (callback) => {
 };
 
 module.exports = class Product {
-  constructor(title, imageUrl, description, price) {
+  constructor(title, imageUrl, price, description) {
     this.title = title;
     this.imageUrl = imageUrl;
-    this.description = description;
     this.price = price;
+    this.description = description;
   }
 
   save() {
